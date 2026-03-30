@@ -1,0 +1,71 @@
+body {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+[data-lang="ja"] {
+    display: none;
+}
+
+.lang-ja [data-lang="ko"] {
+    display: none;
+}
+
+.lang-ja [data-lang="ja"] {
+    display: block;
+}
+
+.glass-nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Timeline scroll animation */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item:nth-child(2) { transition-delay: 0.1s; }
+.timeline-item:nth-child(3) { transition-delay: 0.2s; }
+.timeline-item:nth-child(4) { transition-delay: 0.3s; }
+
+/* Timeline spotlight effect */
+.timeline-container:hover .timeline-item {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-container:hover .timeline-item:hover {
+    opacity: 1;
+}
+
+/* Skills spotlight effect */
+.skills-container:hover .skill-card {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+.skills-container:hover .skill-card:hover {
+    opacity: 1;
+}
+
+/* Active dot pulse */
+@keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 90, 146, 0.4); }
+    70%  { box-shadow: 0 0 0 10px rgba(0, 90, 146, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 90, 146, 0); }
+}
+
+.dot-pulse {
+    animation: pulse-ring 1.8s ease-out infinite;
+}
