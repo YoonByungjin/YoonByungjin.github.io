@@ -6,15 +6,15 @@ body {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-[data-lang="ja"] {
+[data-lang="ko"] {
     display: none;
 }
 
-.lang-ja [data-lang="ko"] {
+.lang-ko [data-lang="ja"] {
     display: none;
 }
 
-.lang-ja [data-lang="ja"] {
+.lang-ko [data-lang="ko"] {
     display: block;
 }
 
@@ -69,3 +69,78 @@ body {
 .dot-pulse {
     animation: pulse-ring 1.8s ease-out infinite;
 }
+
+/* ===== TECH TAG ===== */
+.tech-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    cursor: default;
+    background-color: #eae8e7;
+    color: #475569;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+.tech-tag:hover {
+    background-color: #005a92;
+    color: #ffffff;
+}
+
+.dark .tech-tag {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+.dark .tech-tag:hover {
+    background-color: #0073b9;
+    color: #ffffff;
+}
+
+/* ===== DARK MODE ===== */
+
+/* Body */
+.dark body {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
+}
+
+/* Section-level backgrounds */
+.dark section.bg-background,
+.dark section.bg-surface-container-lowest,
+.dark section.bg-surface-container-low {
+    background-color: #0f172a !important;
+}
+
+/* Card / container backgrounds (a, div) */
+.dark a.bg-surface-container-lowest,
+.dark div.bg-surface-container-lowest,
+.dark div.bg-surface-container-low {
+    background-color: #1e293b !important;
+}
+
+/* Chip / tag backgrounds
+   !important 없이 specificity로만 이김 → hover:bg-primary 정상 작동 */
+html.dark .bg-surface-container-high {
+    background-color: #334155;
+}
+
+/* Secondary container tags (Skills, Kaggle) */
+.dark .bg-secondary-container {
+    background-color: #334155 !important;
+}
+
+/* Text — semantic tokens */
+.dark .text-on-background       { color: #f1f5f9 !important; }
+.dark .text-on-surface          { color: #f1f5f9 !important; }
+.dark .text-on-surface-variant  { color: #94a3b8 !important; }
+.dark .text-on-secondary-container { color: #e2e8f0 !important; }
+
+/* Text — slate overrides */
+.dark .text-slate-500 { color: #94a3b8 !important; }
+
+/* text-slate-600: !important 없이 specificity로 Tailwind 이기되,
+   hover:text-white(:hover 포함 specificity가 더 높음)는 정상 작동하도록 유지 */
+html.dark .text-slate-600 { color: #cbd5e1; }
